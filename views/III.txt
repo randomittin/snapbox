@@ -1,0 +1,16 @@
+</div>
+<p class="p">By RJ</p>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#upload').on('change', function(evt) {
+    var file = evt.target.files[0];
+    if (file){
+        $('#upload-btn').click();
+    } else {
+        $('#upload-btn').hide();
+    }
+  });
+})
+</script>
+</html>

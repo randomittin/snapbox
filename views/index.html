@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<head>
+  <title>Snap-Box</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <style type="text/css">
+  /*****************************************
+  upload button styles
+******************************************/
+.file-upload {
+  position:fixed;
+  bottom:40px;
+  right:40px;
+  text-align:center;
+}
+
+.file-upload__label {
+  display: inline-block;
+  padding: 1.5em;
+  color: #fff;
+  background: #222;
+  border-radius: .4em;
+  transition: background .3s;
+}
+.file-upload__label:hover {
+  cursor: pointer;
+  background: #555;
+}
+
+.file-upload__input {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 1;
+  width: 0;
+  height: 100%;
+  opacity: 0;
+}
+    body {
+  width: 80%;
+  margin: 30px auto;
+  font-family: sans-serif;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.65em;
+  margin: 0 0 30px;
+}
+
+div {
+  font-size: 0;
+}
+
+a {
+  font-size: 16px;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+  margin-right: 8px;
+}
+
+a:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 50em) and (min-height: 30em) {
+  a {
+    width: calc(25% - 6px);
+    height: calc(25% - 6px);
+  }
+  
+  a:nth-of-type(2n) {
+    margin-right: 8px;
+  }
+  
+  a:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
+
+a:hover img {
+  transform: scale(1.15);
+  -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0);
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  background: #ccc;
+  transition: transform .2s ease-in-out;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.p a {
+  display: inline;
+  font-size: 13px;
+  margin: 0;
+}
+
+.p {
+  text-align: center;
+  font-size: 13px;
+  padding-top: 100px;
+}
+</style>
+</head>
+<body>
+<!--   <form action="/upload" enctype="multipart/form-data" method="post">
+    <h2>fdghjk</h2>
+      <input type="file" name="image" accept="image/*">
+      <button><input type="submit" value="Upload"></button>
+    </form> -->
+
+<random class="file-upload">
+    <label for="upload" class="file-upload__label">+</label>
+    <form id="uploadForm" enctype="multipart/form-data" method="post" action="/upload">
+    <input id="upload" class="file-upload__input" type="file" name="image" accept="image/*">
+    <input type="submit" value="Upload File" name="submit" id="upload-btn" style="display: none;">
+</form>
+</random>
+
+<h3><code>Snap-Box</code></h3>
+<div><a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg">
+  <figure>
+    <img src="https://wallpaperclicker.com/storage/wallpaper/COOL-WALLPAPER-7037-21909636.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg02.jpg">
+  <figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg02.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg03.jpg">
+  <figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg03.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg04.jpg">
+  <figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg04.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg05.jpg">
+  <figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg05.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg06.jpg">
+  <figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg06.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg07.jpg">
+  <figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg07.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg08.jpg">
+  <figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg08.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg09.jpg">
+  <figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg09.jpg" alt="">
+  </figure>
+</a>
+<a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg10.jpg">
+  <figure>
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/SupermanRoss.png" alt="">
+  </figure>
+</a>
+<a href="./uploads/1526535698497WWW.YIFY-TORRENTS.COM.jpg">
+	<figure>
+		<img src="./uploads/1526535698497WWW.YIFY-TORRENTS.COM.jpg" alt="">
+	</figure>
+</a>
+</div>
+<p class="p">By RJ</p>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#upload').on('change', function(evt) {
+    var file = evt.target.files[0];
+    if (file){
+        $('#upload-btn').click();
+    } else {
+        $('#upload-btn').hide();
+    }
+  });
+})
+</script>
+</html>
